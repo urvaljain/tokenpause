@@ -1,0 +1,389 @@
+/* Header, sections, hero, landing blocks, footer. */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246, 241, 231, 0.92);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: saturate(140%) blur(8px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding-block: var(--space-3);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  flex: 0 0 auto;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-sm);
+  background: var(--paper-raised);
+}
+
+.brand-mark span {
+  display: block;
+  width: 3px;
+  height: 0.85rem;
+  background: var(--accent);
+  box-shadow: 5px 0 0 var(--accent);
+  margin-right: 5px;
+}
+
+.site-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  margin: 0;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 0.25rem 0;
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent);
+}
+
+.header-cta {
+  flex: 0 0 auto;
+}
+
+/* ------------------------------ sections ------------------------------ */
+
+.section {
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--rule);
+}
+
+.section:first-of-type {
+  border-top: 0;
+}
+
+.section--sunk {
+  background: linear-gradient(180deg, rgba(239, 232, 218, 0.75), rgba(239, 232, 218, 0.3));
+}
+
+.section-head {
+  max-width: 48rem;
+  margin-bottom: var(--space-6);
+}
+
+.section-head > :last-child {
+  margin-bottom: 0;
+}
+
+.section-title {
+  margin-bottom: var(--space-3);
+}
+
+/* -------------------------------- hero -------------------------------- */
+
+.hero {
+  padding-block: var(--space-8) var(--space-7);
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+  align-items: start;
+}
+
+.hero-title {
+  margin-bottom: var(--space-4);
+}
+
+.hero-lede {
+  font-size: var(--step-1);
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+
+.hero-actions {
+  margin-block: var(--space-5);
+}
+
+.trust-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+  padding-top: var(--space-4);
+}
+
+.trust-list li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.trust-list li::before {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Pressure card — the "paper note" motif. */
+.pressure-card {
+  position: relative;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-lift);
+}
+
+.pressure-card::before {
+  content: '';
+  position: absolute;
+  inset: 0.45rem 0.45rem -0.45rem -0.45rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--paper-sunk);
+  z-index: -1;
+}
+
+.pressure-quote {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0;
+}
+
+.pressure-block + .pressure-block {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--rule-strong);
+}
+
+.pressure-speaker {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-2);
+}
+
+.pressure-answer .pressure-quote {
+  color: var(--accent-strong);
+}
+
+.pressure-foot {
+  margin: var(--space-4) 0 0;
+  font-size: var(--step--1);
+  color: var(--ink-muted);
+}
+
+/* ---------------------------- problem cards --------------------------- */
+
+.problem-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.problem-card h3 {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.problem-index {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+
+/* ----------------------------- how it works --------------------------- */
+
+.how-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  counter-reset: how;
+}
+
+.how-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+}
+
+.how-card h3 {
+  margin: 0;
+}
+
+.how-card p {
+  flex: 1 1 auto;
+  margin-bottom: var(--space-2);
+}
+
+.how-number {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  font-weight: 700;
+}
+
+.how-link {
+  align-self: flex-start;
+}
+
+/* ------------------------------- footer ------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  background: var(--paper-deep);
+  color: var(--ink-inverse);
+  padding-block: var(--space-7);
+}
+
+.site-footer h2,
+.site-footer h3 {
+  color: var(--ink-inverse);
+}
+
+.site-footer a {
+  color: #e8b79f;
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+
+.footer-note {
+  color: #c4cfc8;
+  font-size: var(--step--1);
+  max-width: 48ch;
+}
+
+.footer-meta {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(247, 243, 234, 0.18);
+  font-size: var(--step--1);
+  color: #aab8b0;
+}
+
+/* ----------------------------- responsive ----------------------------- */
+
+@media (max-width: 60rem) {
+  .hero-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-lede {
+    max-width: 48ch;
+  }
+}
+
+@media (max-width: 48rem) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .site-nav {
+    order: 3;
+    flex-basis: 100%;
+    border-top: 1px solid var(--rule);
+    padding-top: var(--space-3);
+  }
+
+  .header-cta {
+    margin-left: auto;
+  }
+
+  .section {
+    padding-block: var(--space-7);
+  }
+
+  html {
+    scroll-padding-top: 9.5rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .container {
+    padding-inline: var(--space-4);
+  }
+
+  .card,
+  .how-card,
+  .pressure-card {
+    padding: var(--space-4);
+  }
+
+  .brand {
+    font-size: var(--step-0);
+  }
+
+  .header-cta .btn {
+    width: 100%;
+  }
+}
